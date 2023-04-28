@@ -1,0 +1,11 @@
+<div class="paragraph" [ngStyle]="!isFocus? {} : {'border': '3px solid ' + paragraph.color, 'border-radius': '8px', 'box-shadow': '5px 3px 2px '+paragraph.color }">
+  <h2 >
+    {{paragraph.title}}
+  </h2>
+  <div>
+  {{paragraph.content}}
+  </div>
+  <button [ngStyle]="{backgroundColor: paragraph.color, borderColor: paragraph.color, boxShadow: '2px 2px 2px '+paragraph.color }" (click)="focusMe()">
+    Set {{paragraph.color}}
+  </button>
+</div>

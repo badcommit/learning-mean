@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MOCK_PARAGRAPHS, Paragraph} from "./model";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tour';
+  paragraphs!: Paragraph[]
+  title!: string
+  selected!: number
+
+
+  ngOnInit(){
+    this.paragraphs = MOCK_PARAGRAPHS
+    this.selected = 0
+    this.title = this.paragraphs[this.selected].title
+  }
+
+  onChildFocus(rank: number) {
+    this.selected = +rank
+  }
+
 }
